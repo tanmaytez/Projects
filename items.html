@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            margin: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .item-card {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin: 10px;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+    </style>
+    <title>Items</title>
+</head>
+<body>
+
+    <header>
+        <h1>Items</h1>
+        <p>Explore items in the selected category</p>
+    </header>
+
+    <section>
+        <!-- JavaScript will dynamically populate items based on the selected category -->
+    </section>
+
+    <script>
+        // JavaScript to dynamically populate items based on the selected category
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const category = urlParams.get('category');
+            if (category) {
+                document.querySelector('header p').innerText = `Items in ${category}`;
+                populateItems(category);
+            } else {
+                window.location.href = 'goods.html'; // Redirect to the main page if no category is selected
+            }
+        });
+
+        function populateItems(category) {
+            // You can fetch items based on the category from a database or add them manually
+            const itemsContainer = document.querySelector('section');
+
+            // Example items (you can customize and add more)
+            const items = [
+                { name: 'Laptop', description: 'High-performance laptop', category: 'Consumer Goods' },
+                { name: 'Canned Soup', description: 'Assorted canned soups', category: 'Food and Beverages' },
+                // Add more items as needed
+            ];
+
+            items.forEach(item => {
+                if (item.category === category) {
+                    const itemCard = document.createElement('div');
+                    itemCard.className = 'item-card';
+                    itemCard.innerHTML = `
+                        <h2>${item.name}</h2>
+                        <p>${item.description}</p>
+                    `;
+                    itemsContainer.appendChild(itemCard);
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

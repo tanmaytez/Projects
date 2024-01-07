@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            margin: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .category-card {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin: 10px;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+    </style>
+    <title>Types of Goods</title>
+</head>
+<body>
+
+    <header>
+        <h1>Types of Goods</h1>
+        <p>Select a category to view items</p>
+    </header>
+
+    <section>
+        <div class="category-card" onclick="window.location.href='items.html?category=Consumer Goods'">
+            <h2>Consumer Goods</h2>
+            <p>Electronics, Apparel, Furniture</p>
+        </div>
+
+        <div class="category-card" onclick="window.location.href='items.html?category=Food and Beverages'">
+            <h2>Food and Beverages</h2>
+            <p>Canned Goods, Snacks, Beverages</p>
+        </div>
+
+        <!-- Add more category cards as needed -->
+
+    </section>
+
+</body>
+</html>
